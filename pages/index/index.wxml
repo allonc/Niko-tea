@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <main-list datalist="{{datalist}}" id="main-list"></main-list>
+</view>

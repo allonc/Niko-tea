@@ -1,0 +1,11 @@
+/**index.wxss**/
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#main-list{
+  height: 90vh;
+}

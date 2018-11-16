@@ -1,0 +1,4 @@
+<!--pages/me/me.wxml-->
+<view>
+  <image src="../../icons/2.jpg" mode='scaleToFill'></image>
+</view>

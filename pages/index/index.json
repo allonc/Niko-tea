@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "detail": "/components/detail/detail",
+    "main-list": "/components/main-list/main-list"
+  }
+}
