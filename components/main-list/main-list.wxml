@@ -1,17 +1,16 @@
 <!--components/main-list/main-list.wxml-->
 <view class='main'>
   <view class='main-left'>
-    <scroll-view class='menu-scrollbox' scroll-y bindscrolltoupper="" bindscrolltolower="" bindscroll="scroll" scroll-into-view="{{}}" scroll-top="{{}}">
-      <view wx:for="{{datalist.data}}" wx:key="index" id="left" class="scroll-view-item left">
+    <scroll-view class='menu-scrollbox' scroll-y="true" scroll-into-view="{{currentActive}}">
+      <view wx:for="{{datalist.data}}" wx:key="index" class="scroll-view-item left {{index===active?'active':''}}" data-tap-id="tap{{index}}" catchtap="taptap" data-index="{{index}}">
         {{item.name}}
       </view>
     </scroll-view>
   </view>
 
   <view class='main-right'>
-    <scroll-view class='scrollbox' scroll-y bindscrolltoupper="" bindscrolltolower="" bindscroll="scroll" scroll-into-view="{{}}" scroll-top="{{}}">
-      <view class='right-list'>
-        <view wx:for="{{datalist.data}}" id="right" class="scroll-view-item right-title" wx:key="">
+    <scroll-view class='scrollbox' scroll-y="true" scroll-into-view="{{currentActive}}" scroll-with-animation="true" bindscroll="onScroll"	>
+        <view wx:for="{{datalist.data}}" class="scroll-view-item right-title" wx:key="" id='tap{{index}}'>
           <view class='title'>{{item.name}}</view>
           <view wx:for="{{item.products.data}}" wx:for-item="inner_item" wx:key="inner_item.category_id" class='inner'>
             <view class='icon'>
@@ -26,11 +25,10 @@
               </view>
             </view>
 
+          </view>
         </view>
-      </view>
+    </scroll-view>
   </view>
-  </scroll-view>
-</view>
 
 
 
